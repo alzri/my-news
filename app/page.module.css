@@ -107,7 +107,7 @@ a.secondary {
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .main {
     padding: 48px 24px;
   }
