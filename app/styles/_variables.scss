@@ -1,0 +1,6 @@
+$breakpoint-s: 1024px;
+$breakpoint-m: 1280px;
+$breakpoint-l: 2560px;
+$num-columns: 24;
+$grid-width: min(100vw, $breakpoint-l);
+$grid-column-width: calc($grid-width / $num-columns);

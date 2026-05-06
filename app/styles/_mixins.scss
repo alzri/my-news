@@ -1,0 +1,93 @@
+@use '@/styles/variables' as *;
+
+/* grid column mixins */
+
+@mixin generate-span-classes($prefix, $property, $range) {
+  @for $i from 1 through $range {
+    .#{$prefix}-#{$i} {
+      #{$property}: span $i;
+    }
+  }
+}
+
+@mixin generate-media-query-span-classes($prefix, $property, $range, $breakpoint) {
+  @for $i from 1 through $range {
+    .#{$prefix}-#{$i} {
+      @media (width < $breakpoint) {
+        #{$property}: span $i;
+      }
+    }
+  }
+}
+
+@mixin generate-start-classes($prefix, $property, $range) {
+  @for $i from 1 through $range {
+    .#{$prefix}-#{$i} {
+      #{$property}: $i;
+    }
+  }
+}
+
+@mixin generate-media-query-start-classes($prefix, $property, $range, $breakpoint) {
+  @for $i from 1 through $range {
+    .#{$prefix}-#{$i} {
+      @media (width < $breakpoint) {
+        #{$property}: $i;
+      }
+    }
+  }
+}
+
+/* text component mixins */
+
+@mixin text-styles($type, $level) {
+  font-family: var(--typography-l-#{$type}-#{$level}-font-family);
+  font-weight: var(--typography-l-#{$type}-#{$level}-font-weight);
+  font-size: var(--typography-l-#{$type}-#{$level}-font-size);
+  line-height: var(--typography-l-#{$type}-#{$level}-line-height);
+  letter-spacing: var(--typography-l-#{$type}-#{$level}-letter-spacing);
+
+  @media screen and (width < $breakpoint-m) {
+    font-size: var(--typography-m-#{$type}-#{$level}-font-size);
+    line-height: var(--typography-m-#{$type}-#{$level}-line-height);
+    letter-spacing: var(--typography-m-#{$type}-#{$level}-letter-spacing);
+  }
+
+  @media screen and (width < $breakpoint-s) {
+    font-size: var(--typography-s-#{$type}-#{$level}-font-size);
+    line-height: var(--typography-s-#{$type}-#{$level}-line-height);
+    letter-spacing: var(--typography-s-#{$type}-#{$level}-letter-spacing);
+  }
+}
+
+/* media queries */
+
+@mixin for-medium-screens {
+  @media screen and (width < $breakpoint-m) {
+    @content;
+  }
+}
+
+@mixin for-smaller-screens {
+  @media screen and (width < $breakpoint-s) {
+    @content;
+  }
+}
+
+@mixin responsive-spacings($map) {
+  @each $property, $token in $map {
+    #{$property}: var(--spacing-screen-l-fluid-#{$token});
+  }
+
+  @media (max-width: $breakpoint-m) {
+    @each $property, $token in $map {
+      #{$property}: var(--spacing-screen-m-fluid-#{$token});
+    }
+  }
+
+  @media (max-width: $breakpoint-s) {
+    @each $property, $token in $map {
+      #{$property}: var(--spacing-screen-s-fluid-#{$token});
+    }
+  }
+}
