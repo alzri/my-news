@@ -1,0 +1,57 @@
+.article {
+  &-wrapper {
+    background-color: var(--bg-primary);
+    border: none;
+    border-radius: 15px;
+    width: 320px;
+    height: 250px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &-banner {
+    width: 320px;
+    height: 140px;
+
+    img {
+      border-radius: 15px 15px 0 0;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    padding: 12px 12px 16px;
+
+    .category {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .title {
+      font-weight: 500;
+      padding-bottom: 30px;
+    }
+
+    .author {
+      @media screen and (width <= 768px) {
+        display: none;
+      }
+    }
+  }
+
+  &-paid-badge {
+    background-color: var(--bg-secondary);
+    width: 24px;
+    height: 24px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 19px;
+    margin-left: 20px;
+  }
+}
