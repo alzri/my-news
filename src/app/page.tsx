@@ -1,3 +1,4 @@
+import { ArticleCard } from '../components/article-card/ArticleCard';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -9,6 +10,13 @@ export default function Home() {
         </div>
         <div>
           <h1>test</h1>
+          <ArticleCard
+            title={'A Pocket Pc Is Porta'}
+            href={'#'}
+            category={'Sport'}
+            author={'Test autora'}
+            isPaid={true}
+          />
         </div>
       </main>
     </div>

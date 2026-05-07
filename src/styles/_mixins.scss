@@ -1,4 +1,4 @@
-@use '@/styles/variables' as *;
+@use './variables' as *;
 
 /* grid column mixins */
 
@@ -42,7 +42,6 @@
 
 @mixin text-styles($type, $level) {
   font-family: var(--typography-l-#{$type}-#{$level}-font-family);
-  font-weight: var(--typography-l-#{$type}-#{$level}-font-weight);
   font-size: var(--typography-l-#{$type}-#{$level}-font-size);
   line-height: var(--typography-l-#{$type}-#{$level}-line-height);
   letter-spacing: var(--typography-l-#{$type}-#{$level}-letter-spacing);

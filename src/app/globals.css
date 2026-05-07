@@ -35,8 +35,9 @@
 
 :root {
   /* background color */
-  --bg-default: #fff;
-  --bg-accent: #bb1e1e;
+  --bg-primary: #fff;
+  --bg-secondary: #bb1e1e;
+  --bg-tertiary: #f4f5f8;
   --bg-accent-dark: #b21919;
   --bg-dark: #1d1d1b;
   --bg-light: #f8f5f2;
@@ -80,37 +81,37 @@
   --font-weight-bold: 700;
   --font-weight-black: 900;
 
-  --typography-heading-h2-font-family: var(--font-family-primary);
-  --typography-heading-h2-font-size: 1.563rem;
-  --typography-heading-h2-line-height: 1.813rem;
-  --typography-heading-h2-letter-spacing: -0.012rem;
+  --typography-l-heading-h1-font-family: var(--font-family-primary);
+  --typography-l-heading-h1-font-size: 1.563rem;
+  --typography-l-heading-h1-line-height: 1.813rem;
+  --typography-l-heading-h1-letter-spacing: -0.012rem;
 
-  --typography-heading-h3-font-family: var(--font-family-primary);
-  --typography-heading-h3-font-size: 1.125rem;
-  --typography-heading-h3-line-height: 1.5rem;
-  --typography-heading-h3-letter-spacing: -0.009rem;
+  --typography-l-heading-h2-font-family: var(--font-family-primary);
+  --typography-l-heading-h2-font-size: 1.125rem;
+  --typography-l-heading-h2-line-height: 1.5rem;
+  --typography-l-heading-h2-letter-spacing: -0.009rem;
 
-  --typography-heading-h4-font-family: var(--font-family-primary);
-  --typography-heading-h4-font-size: 1rem;
-  --typography-heading-h4-line-height: 1.25rem;
-  --typography-heading-h4-letter-spacing: -0.007rem;
+  --typography-l-heading-h3-font-family: var(--font-family-primary);
+  --typography-l-heading-h3-font-size: 1rem;
+  --typography-l-heading-h3-line-height: 1.25rem;
+  --typography-l-heading-h3-letter-spacing: -0.007rem;
 
-  --typography-paragraph-xs-font-family: var(--font-family-secondary);
-  --typography-paragraph-xs-font-size: 0.625rem;
-  --typography-paragraph-xs-line-height: 1rem;
-  --typography-paragraph-xs-letter-spacing: -0.001rem;
+  --typography-l-paragraph-xs-font-family: var(--font-family-primary);
+  --typography-l-paragraph-xs-font-size: 0.625rem;
+  --typography-l-paragraph-xs-line-height: 1rem;
+  --typography-l-paragraph-xs-letter-spacing: -0.001rem;
 
-  --typography-paragraph-s-font-family: var(--font-family-secondary);
-  --typography-paragraph-s-font-size: 0.75rem;
-  --typography-paragraph-s-line-height: 1;
-  --typography-paragraph-s-letter-spacing: -0.004rem;
+  --typography-l-paragraph-s-font-family: var(--font-family-primary);
+  --typography-l-paragraph-s-font-size: 0.75rem;
+  --typography-l-paragraph-s-line-height: 1;
+  --typography-l-paragraph-s-letter-spacing: -0.004rem;
 
-  --typography-paragraph-m-font-family: var(--font-family-secondary);
+  --typography-paragraph-m-font-family: var(--font-family-primary);
   --typography-paragraph-m-font-size: 0.875rem;
   --typography-paragraph-m-line-height: 1.25rem;
   --typography-paragraph-m-letter-spacing: -0.006rem;
 
-  --typography-paragraph-l-font-family: var(--font-family-secondary);
+  --typography-paragraph-l-font-family: var(--font-family-primary);
   --typography-paragraph-l-font-size: 0.938rem;
   --typography-paragraph-l-line-height: 1.25rem;
   --typography-paragraph-l-letter-spacing: 0;
