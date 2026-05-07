@@ -1,0 +1,61 @@
+@use '../../styles/mixins' as *;
+
+.h1 {
+  @include text-styles(heading, h1);
+}
+
+.h2 {
+  @include text-styles(heading, h2);
+}
+
+.h3 {
+  @include text-styles(heading, h3);
+}
+
+.paragraph-xs {
+  @include text-styles(paragraph, xs);
+}
+
+.paragraph-s {
+  @include text-styles(paragraph, s);
+}
+
+.paragraph-m {
+  @include text-styles(paragraph, m);
+}
+
+.paragraph-l {
+  @include text-styles(paragraph, l);
+}
+
+.primary {
+  color: var(--content-primary);
+}
+
+.secondary {
+  color: var(--content-secondary);
+}
+
+.tertiary {
+  color: var(--content-tertiary);
+}
+
+.accent-primary {
+  color: var(--content-accent-primary);
+}
+
+.accent-secondary {
+  color: var(--content-accent-secondary);
+}
+
+.accent-tertiary {
+  color: var(--content-accent-tertiary);
+}
+
+.active-state {
+  color: var(--active-state);
+}
+
+.inactive-state {
+  color: var(--inactive-state);
+}
