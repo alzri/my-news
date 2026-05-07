@@ -51,6 +51,7 @@
   --content-accent-tertiary: #f8f5f2;
   --active-state: #bb1e1e;
   --inactive-state: #1d1d1b;
+  --divider-color: #f4f5f8;
 
   /* breakpoints */
   --breakpoint-l: 2560px;
@@ -106,15 +107,15 @@
   --typography-l-paragraph-s-line-height: 1;
   --typography-l-paragraph-s-letter-spacing: -0.004rem;
 
-  --typography-paragraph-m-font-family: var(--font-family-primary);
-  --typography-paragraph-m-font-size: 0.875rem;
-  --typography-paragraph-m-line-height: 1.25rem;
-  --typography-paragraph-m-letter-spacing: -0.006rem;
+  --typography-l-paragraph-m-font-family: var(--font-family-primary);
+  --typography-l-paragraph-m-font-size: 0.875rem;
+  --typography-l-paragraph-m-line-height: 1.25rem;
+  --typography-l-paragraph-m-letter-spacing: -0.006rem;
 
-  --typography-paragraph-l-font-family: var(--font-family-primary);
-  --typography-paragraph-l-font-size: 0.938rem;
-  --typography-paragraph-l-line-height: 1.25rem;
-  --typography-paragraph-l-letter-spacing: 0;
+  --typography-l-paragraph-l-font-family: var(--font-family-primary);
+  --typography-l-paragraph-l-font-size: 0.938rem;
+  --typography-l-paragraph-l-line-height: 1.25rem;
+  --typography-l-paragraph-l-letter-spacing: 0;
 }
 
 /* Responsive grid variable overrides */
