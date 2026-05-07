@@ -1,4 +1,5 @@
 import { ArticleCard } from '../components/article-card/ArticleCard';
+import { BreakingNews } from '../components/breaking-news/BreakingNews';
 import { LatesNews } from '../components/lates-news/LatesNews';
 import styles from './page.module.css';
 
@@ -11,6 +12,11 @@ export default function Home() {
         </div>
         <div>
           <h1>test</h1>
+          <BreakingNews
+            title={'Peace On Earth A Wonderful Wish But No Way'}
+            author={'Bertie Campbell'}
+            href={'#'}
+          />
           <ArticleCard
             title={'A Pocket Pc Is Porta'}
             href={'#'}
@@ -52,7 +58,7 @@ export default function Home() {
                 href: '/news/test1',
               },
             ]}
-          ></LatesNews>
+          />
         </div>
       </main>
     </div>
