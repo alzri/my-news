@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint . && stylelint '**/*.{css,scss}'",
     "lint:fix": "eslint . --fix && stylelint '**/*.{css,scss}' --fix",
@@ -24,6 +24,7 @@
     "sass": "^1.99.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

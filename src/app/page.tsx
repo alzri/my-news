@@ -1,6 +1,3 @@
-import { ArticleCard } from '../components/article-card/ArticleCard';
-import { BreakingNews } from '../components/breaking-news/BreakingNews';
-import { LatesNews } from '../components/lates-news/LatesNews';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -12,53 +9,6 @@ export default function Home() {
         </div>
         <div>
           <h1>test</h1>
-          <BreakingNews
-            title={'Peace On Earth A Wonderful Wish But No Way'}
-            author={'Bertie Campbell'}
-            href={'#'}
-          />
-          <ArticleCard
-            title={'A Pocket Pc Is Porta'}
-            href={'#'}
-            category={'Sport'}
-            author={'Test autora'}
-            isPaid={true}
-          />
-
-          <LatesNews
-            articles={[
-              {
-                title: 'Maintain Your Pc S Performance With Pc Programs',
-                time: '14:30',
-                href: '/news/test5',
-              },
-              {
-                title: '6 Powerful Tips To Creating Testimonials That Sell Your Products',
-                time: '14:30',
-                href: '/news/test4',
-              },
-              {
-                title: '5 Reasons To Choose A Notebook Over A Computer Desktop',
-                time: '14:30',
-                href: '/news/tes3',
-              },
-              {
-                title: 'Cdc Issues Health Alert Notice For Travelers To Usa From Hon',
-                time: '14:30',
-                href: '/news/test2',
-              },
-              {
-                title: 'Use Your Reset Button',
-                time: '14:30',
-                href: '/news/test1',
-              },
-              {
-                title: 'Use Your Reset Button',
-                time: '14:30',
-                href: '/news/test1',
-              },
-            ]}
-          />
         </div>
       </main>
     </div>
