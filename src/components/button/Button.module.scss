@@ -1,0 +1,36 @@
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-family-primary);
+  font-size: 0.938rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  font-weight: 700;
+
+  &.white {
+    background-color: var(--bg-primary);
+    color: var(--content-primary);
+  }
+
+  &.red {
+    background-color: var(--bg-secondary);
+    color: var(--content-tertiary);
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: var(--content-tertiary);
+  }
+
+  &.link {
+    padding: 0;
+    background-color: transparent;
+    color: var(--content-accent-primary);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.006rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
