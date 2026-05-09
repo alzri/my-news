@@ -1,0 +1,25 @@
+.prompt-card {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 170px;
+    background:
+      url('../../assets/Pattern.png') no-repeat center,
+      linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent-dark) 100%);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: bottom 10% right 12%;
+
+    @media screen and (width <= 768px) {
+      display: none;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+  }
+}
