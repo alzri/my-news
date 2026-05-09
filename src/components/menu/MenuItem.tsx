@@ -1,4 +1,4 @@
-import { IMenuProps } from './Menu.type';
+import { IMenuProps } from './Menu.types';
 import styles from './Menu.module.scss';
 import { Text } from '../text/Text';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import { IBreakingNewsProps } from './BreakingNews.type';
+import { IBreakingNewsProps } from './BreakingNews.types';
 import { Text } from '../text/Text';
 import styles from './BreakingNews.module.scss';
 import Link from 'next/link';
