@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Text } from '../text/Text';
-import styles from './LatestNewsItem.module.scss';
+import styles from './LatesNews.module.scss';
 
 export interface ILatestNewsItemProps {
   title: string;

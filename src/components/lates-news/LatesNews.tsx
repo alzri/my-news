@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import { ILatestNewsItemProps, LatestNewsItem } from '../latest-news-item/LatestNewsItem';
+import { ILatestNewsItemProps, LatestNewsItem } from './LatestNewsItem';
 import { Text } from '../text/Text';
 import ArrowRight from '../../assets/icons/ArrowRight.svg';
 import styles from './LatesNews.module.scss';
-import Image from 'next/image';
+import { Button } from '../button/Button';
 
 export interface ILatesNewsProps {
   articles: ILatestNewsItemProps[];
@@ -29,8 +28,10 @@ export const LatesNews = ({ articles }: ILatesNewsProps) => {
         ))}
       </div>
       <div className={styles['lates-news-more']}>
-        <Link href={'/more'}>See all news</Link>
-        <Image loading="eager" alt="Arrow right" src={ArrowRight} />
+        <Button href={'/more'} component="a" version="link">
+          See all news
+        </Button>
+        <ArrowRight />
       </div>
     </div>
   );

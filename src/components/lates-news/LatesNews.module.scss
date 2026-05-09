@@ -1,3 +1,24 @@
+.lates-news-item-wrapper {
+  display: grid;
+  gap: 10px;
+  text-decoration: none;
+
+  .time {
+    font-weight: 700;
+  }
+
+  .title {
+    font-weight: 500;
+  }
+}
+
+.divider {
+  background-color: var(--divider-color);
+  width: 100%;
+  height: 1px;
+  margin: 14px 0;
+}
+
 .lates-news {
   &-wrapper {
     background-color: var(--bg-primary);
@@ -66,6 +87,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 2px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -73,15 +95,5 @@
     width: 100%;
     height: 50px;
     padding: 15px;
-
-    a {
-      font-family: var(--font-family-primary);
-      font-size: 0.875rem;
-      font-weight: 500;
-      line-height: 1.25rem;
-      letter-spacing: -0.006rem;
-      text-decoration: none;
-      color: var(--content-accent-primary);
-    }
   }
 }
