@@ -3,6 +3,6 @@ import { IBreakingNewsProps } from '../breaking-news/BreakingNews.types';
 
 export interface IArticleListProps {
   articles: IArticleCardProps[];
-  breakingNews: IBreakingNewsProps;
+  breakingNews?: IBreakingNewsProps;
   columnCount?: 'two' | 'three';
 }

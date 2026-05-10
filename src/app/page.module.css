@@ -2,9 +2,17 @@
   width: 100%;
 }
 
+.title {
+  padding-bottom: 16px;
+}
+
 .top-section {
   display: grid;
   grid-template-columns: 2fr 1fr;
   align-items: start;
   column-gap: 22px;
+}
+
+.bottom-section {
+  padding-top: 22px;
 }
