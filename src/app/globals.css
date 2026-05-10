@@ -123,6 +123,10 @@
   :root {
     --column-gap: var(--grid-column-gap-m);
   }
+
+  body {
+    grid-template-columns: 1fr;
+  }
 }
 
 body {
@@ -131,13 +135,13 @@ body {
 }
 
 body {
-  width: min(100vw, var(--breakpoint-xl));
+  width: min(100%, 1000px);
   margin: 0 auto;
-  background: var(--bg);
-  color: var(--text);
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  min-height: 100vh;
+  gap: 25px;
+  background-color: var(--bg-tertiary);
 }
 
 * {

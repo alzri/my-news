@@ -1,16 +1,23 @@
+import { ArticleList } from '../components/article-list/ArticleList';
 import styles from './page.module.css';
+import { articleNews, breakingNews, latestNews } from '../data/dummyNews';
+import { Text } from '../components/text/Text';
+import { LatesNews } from '../components/lates-news/LatesNews';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
+    <main className={styles.main}>
+      <div className={styles.intro}></div>
+      <div>
+        <Text component="h2" size="h2" color="primary">
+          News
+        </Text>
+        <div className={styles['top-section']}>
+          <ArticleList columnCount="two" articles={articleNews} breakingNews={breakingNews} />
+          <LatesNews articles={latestNews} />
         </div>
-        <div>
-          <h1>test</h1>
-        </div>
-      </main>
-    </div>
+        <div className={styles['bottom-section']}></div>
+      </div>
+    </main>
   );
 }
