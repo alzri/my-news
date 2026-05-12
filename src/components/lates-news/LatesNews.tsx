@@ -20,10 +20,10 @@ export const LatesNews = ({ articles }: ILatesNewsProps) => {
       <div className={styles['lates-news-list']}>
         {articles.map((article) => (
           <LatestNewsItem
-            key={article.href}
+            key={article.url}
             title={article.title}
-            time={article.time}
-            href={article.href}
+            publishedAt={article.publishedAt}
+            url={article.url}
           />
         ))}
       </div>

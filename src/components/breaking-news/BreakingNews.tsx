@@ -3,9 +3,9 @@ import { Text } from '../text/Text';
 import styles from './BreakingNews.module.scss';
 import Link from 'next/link';
 
-export const BreakingNews = ({ title, author, href }: IBreakingNewsProps) => {
+export const BreakingNews = ({ title, author, url }: IBreakingNewsProps) => {
   return (
-    <Link className={styles['breaking-news-wrapper']} href={href}>
+    <Link className={styles['breaking-news-wrapper']} href={url}>
       <div className={styles['breaking-news-tag']}>
         <Text className={styles['tag-name']} component="p" size="paragraph-xs" color="tertiary">
           Breaking

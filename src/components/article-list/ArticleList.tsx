@@ -46,7 +46,7 @@ export const ArticleList = ({
   return (
     <div className={containerClassName}>
       {orderedArticles.map((article) => (
-        <ArticleCard key={article.href} {...article} />
+        <ArticleCard key={article.url} {...article} />
       ))}
 
       {isTwoColumn && breakingNews && <BreakingNews {...breakingNews} />}

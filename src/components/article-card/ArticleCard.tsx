@@ -5,10 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BannerImage from '../../assets/ArticleImage.png';
 
-export const ArticleCard = ({ href, category, title, author, isPaid }: IArticleCardProps) => {
+export const ArticleCard = ({ url, category, title, author, isPaid }: IArticleCardProps) => {
   return (
     <div className={styles['article-wrapper']}>
-      <Link href={href}>
+      <Link href={url}>
         <div className={styles['article-banner']}>
           {isPaid && (
             <Text
