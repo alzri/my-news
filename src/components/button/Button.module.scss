@@ -34,6 +34,19 @@
     text-decoration: none;
   }
 
+  &.active {
+    background: rgb(187 30 30 / 10%);
+    color: var(--active-state);
+    font-weight: 500;
+    border-radius: 30px;
+  }
+
+  &.inactive {
+    background-color: transparent;
+    color: var(--content-primary);
+    font-weight: 500;
+  }
+
   &:hover {
     cursor: pointer;
   }

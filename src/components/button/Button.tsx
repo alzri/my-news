@@ -6,8 +6,9 @@ import Link from 'next/link';
 export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   component?: 'button' | 'a';
   href?: string;
-  version?: 'red' | 'white' | 'transparent' | 'link';
+  version?: 'red' | 'white' | 'transparent' | 'link' | 'switch';
   children?: React.ReactNode;
+  isActive?: boolean;
 }
 
 export const Button = ({
@@ -15,11 +16,17 @@ export const Button = ({
   href,
   version = 'white',
   className,
+  isActive,
   children,
   ...rest
 }: IButtonProps) => {
   const isAnchor = component === 'a';
-  const classNames = clsx(styles.button, styles[version], className);
+  const classNames = clsx(
+    styles.button,
+    styles[version],
+    version === 'switch' && (isActive ? styles.active : styles.inactive),
+    className
+  );
 
   return isAnchor && href ? (
     <Link href={href} className={classNames}>

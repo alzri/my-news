@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import { articleNews, breakingNews, latestNews } from '../data/dummyNews';
 import { Text } from '../components/text/Text';
 import { LatesNews } from '../components/lates-news/LatesNews';
+import { NewsMobileToggle } from '../components/news-mobile-toggle/NewsMobileToggle';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.intro}></div>
-      <div>
+      <div className={styles.desktop}>
         <Text className={styles.title} component="h2" size="h2" color="primary">
           News
         </Text>
@@ -19,6 +19,10 @@ export default function Home() {
         <div className={styles['bottom-section']}>
           <ArticleList columnCount="three" articles={articleNews} />
         </div>
+      </div>
+
+      <div className={styles.mobile}>
+        <NewsMobileToggle />
       </div>
     </main>
   );
