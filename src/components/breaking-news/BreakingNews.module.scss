@@ -39,6 +39,10 @@
     .title {
       text-align: center;
       font-weight: 900;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .author {
