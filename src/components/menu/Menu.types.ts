@@ -5,4 +5,5 @@ export interface IMenuProps {
   title: string;
   href: string;
   isActive?: boolean;
+  onClick?: () => void;
 }

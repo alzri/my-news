@@ -1,50 +1,47 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import { MenuItem } from './MenuItem';
-import HomeIcon from '../../assets/icons/Home.svg';
-import GeneralIcon from '../../assets/icons/General.svg';
-import BusinessIcon from '../../assets/icons/Business.svg';
-import HealthIcon from '../../assets/icons/Health.svg';
-import ScienceIcon from '../../assets/icons/Science.svg';
-import SportsIcon from '../../assets/icons/Sport.svg';
-import TechnologyIcon from '../../assets/icons/Technology.svg';
+import { useState, useEffect } from 'react';
 import styles from './Menu.module.scss';
+import { MenuContent } from './MenuContent';
 
 export const Menu = () => {
-  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const isActive = (href: string) => pathname === href;
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   return (
     <div className={styles['menu-wrapper']}>
-      <MenuItem icon={HomeIcon} title="Home" href="/" isActive={isActive('/')} />
-      <MenuItem
-        icon={GeneralIcon}
-        title="General"
-        href="/general"
-        isActive={isActive('/general')}
-      />
-      <MenuItem
-        icon={BusinessIcon}
-        title="Business"
-        href="/business"
-        isActive={isActive('/business')}
-      />
-      <MenuItem icon={HealthIcon} title="Health" href="/health" isActive={isActive('/health')} />
-      <MenuItem
-        icon={ScienceIcon}
-        title="Science"
-        href="/science"
-        isActive={isActive('/science')}
-      />
-      <MenuItem icon={SportsIcon} title="Sports" href="/sports" isActive={isActive('/sports')} />
-      <MenuItem
-        icon={TechnologyIcon}
-        title="Technology"
-        href="/technology"
-        isActive={isActive('/technology')}
-      />
+      <div className={styles.desktop}>
+        <MenuContent />
+      </div>
+
+      <div className={styles.mobile}>
+        <button
+          className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          <span className={styles.line} />
+          <span className={styles.line} />
+          <span className={styles.line} />
+        </button>
+
+        {isOpen && (
+          <div className={styles.overlay} onClick={() => setIsOpen(false)}>
+            <div
+              className={`${styles['mobile-content']} ${styles.show}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <MenuContent onClick={() => setIsOpen(false)} />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
