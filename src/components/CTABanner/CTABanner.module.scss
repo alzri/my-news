@@ -1,0 +1,27 @@
+.cta-banner {
+  &-wrapper {
+    background: url('../../assets/Pattern.png'), linear-gradient(145deg, #bb1e1e, #b21919);
+    background-repeat: no-repeat;
+    background-position: top 9% left 68%;
+    background-size: 130%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 100px;
+  }
+
+  &-content,
+  &-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &-content {
+    gap: 45px;
+  }
+
+  &-actions {
+    gap: 25px;
+  }
+}
