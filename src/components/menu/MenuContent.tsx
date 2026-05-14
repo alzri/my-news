@@ -6,6 +6,7 @@ import HealthIcon from '../../assets/icons/Health.svg';
 import ScienceIcon from '../../assets/icons/Science.svg';
 import SportsIcon from '../../assets/icons/Sport.svg';
 import TechnologyIcon from '../../assets/icons/Technology.svg';
+import FavouritesIcon from '../../assets/icons/Favourite.svg';
 import { usePathname } from 'next/navigation';
 
 export const MenuContent = ({ onClick }: { onClick?: () => void }) => {
@@ -19,6 +20,7 @@ export const MenuContent = ({ onClick }: { onClick?: () => void }) => {
     { icon: ScienceIcon, title: 'Science', href: '/science' },
     { icon: SportsIcon, title: 'Sports', href: '/sports' },
     { icon: TechnologyIcon, title: 'Technology', href: '/technology' },
+    { icon: FavouritesIcon, title: 'Favourites', href: '/favourites' },
   ];
 
   return (

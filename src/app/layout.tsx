@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Menu } from '../components/menu/Menu';
 import { CTABanner } from '../components/CTABanner/CTABanner';
+import { FavoritesProvider } from '../context/FavoritesContext';
 
 export const metadata: Metadata = {
   title: 'MyNews',
@@ -24,7 +25,9 @@ export default function RootLayout({
         />
         <div className="layout">
           <Menu />
-          <main>{children}</main>
+          <main>
+            <FavoritesProvider>{children}</FavoritesProvider>
+          </main>
         </div>
       </body>
     </html>

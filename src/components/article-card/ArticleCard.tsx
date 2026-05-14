@@ -1,15 +1,38 @@
+'use client';
 import { IArticleCardProps } from './ArticleCard.types';
 import styles from './ArticleCard.module.scss';
 import { Text } from '../text/Text';
 import Link from 'next/link';
 import Image from 'next/image';
 import BannerImage from '../../assets/ArticleImage.png';
+import { useFavorites } from '../../context/FavoritesContext';
+import FavouritesIcon from '../../assets/icons/Favourite.svg';
 
 export const ArticleCard = ({ url, category, title, author, isPaid }: IArticleCardProps) => {
+  const { toggleFavorite, isFavorite } = useFavorites();
+  const favorite = isFavorite(url);
+  const handleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    toggleFavorite({
+      url,
+      category,
+      title,
+      author,
+      isPaid,
+    });
+  };
+
   return (
     <div className={styles['article-wrapper']}>
       <Link href={url}>
         <div className={styles['article-banner']}>
+          <button
+            className={`${styles.favorite} ${favorite ? styles.active : ''}`}
+            onClick={handleFavorite}
+          >
+            <FavouritesIcon className={`${styles.icon} ${favorite ? styles.active : ''}`} />
+          </button>
           {isPaid && (
             <Text
               className={styles['article-paid-badge']}
