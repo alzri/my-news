@@ -29,4 +29,8 @@
   .mobile {
     display: grid;
   }
+
+  .title {
+    text-align: center;
+  }
 }
