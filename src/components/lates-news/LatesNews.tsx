@@ -1,24 +1,58 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import { ILatestNewsItemProps, LatestNewsItem } from './LatestNewsItem';
 import { Text } from '../text/Text';
 import ArrowRight from '../../assets/icons/ArrowRight.svg';
-import styles from './LatesNews.module.scss';
 import { Button } from '../button/Button';
+import styles from './LatesNews.module.scss';
 
 export interface ILatesNewsProps {
   articles: ILatestNewsItemProps[];
 }
 
+const ITEMS_PER_LOAD = 10;
+
 export const LatesNews = ({ articles }: ILatesNewsProps) => {
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
+
+  const loaderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const target = entries[0];
+
+        if (target.isIntersecting && visibleCount < articles.length) {
+          setVisibleCount((prev) => prev + ITEMS_PER_LOAD);
+        }
+      },
+      {
+        threshold: 1,
+      }
+    );
+
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [visibleCount, articles.length]);
+
+  const visibleArticles = articles.slice(0, visibleCount);
+
   return (
     <div className={styles['lates-news-wrapper']}>
       <div className={styles['lates-news-header']}>
-        <div className={styles['live-dot']}></div>
-        <Text className={styles.title} component={'h3'} size="h3" color="secondary">
+        <div className={styles['live-dot']} />
+
+        <Text className={styles.title} component="h3" size="h3" color="secondary">
           Latest News
         </Text>
       </div>
+
       <div className={styles['lates-news-list']}>
-        {articles.map((article) => (
+        {visibleArticles.map((article) => (
           <LatestNewsItem
             key={article.url}
             title={article.title}
@@ -27,10 +61,14 @@ export const LatesNews = ({ articles }: ILatesNewsProps) => {
           />
         ))}
       </div>
+
+      {visibleCount < articles.length && <div ref={loaderRef} style={{ height: 40 }} />}
+
       <div className={styles['lates-news-more']}>
-        <Button href={'/more'} component="a" version="link">
+        <Button href="/more" component="a" version="link">
           See all news
         </Button>
+
         <ArrowRight />
       </div>
     </div>

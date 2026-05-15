@@ -3,10 +3,22 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
   align-items: stretch;
+
+  @media screen and (width <= 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 .three-grid-column {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
+
+  @media screen and (width <= 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
