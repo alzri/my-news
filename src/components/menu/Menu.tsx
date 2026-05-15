@@ -1,8 +1,11 @@
 'use client';
-
 import { useState, useEffect } from 'react';
-import styles from './Menu.module.scss';
 import { MenuContent } from './MenuContent';
+import LogoIcon from '../../assets/Logo.png';
+import { SearchBar } from '../search-bar/SearchBar';
+import { useSearch } from '../../hooks/useSearch';
+import Image from 'next/image';
+import styles from './Menu.module.scss';
 
 export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +17,8 @@ export const Menu = () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  const { search, handleSearch, submitSearch } = useSearch();
 
   return (
     <div className={styles['menu-wrapper']}>
@@ -37,7 +42,24 @@ export const Menu = () => {
               className={`${styles['mobile-content']} ${styles.show}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <MenuContent onClick={() => setIsOpen(false)} />
+              <div className={styles['mobile-content-top']}>
+                <Image
+                  src={LogoIcon}
+                  alt="Website Logo"
+                  width={139}
+                  height={39}
+                  className={styles.logo}
+                />
+                <SearchBar
+                  value={search}
+                  onChange={handleSearch}
+                  onEnter={submitSearch}
+                  onSearchClick={submitSearch}
+                />
+              </div>
+              <div className={styles['mobile-content-menu']}>
+                <MenuContent onClick={() => setIsOpen(false)} />
+              </div>
             </div>
           </div>
         )}

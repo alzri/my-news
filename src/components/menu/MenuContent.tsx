@@ -1,4 +1,5 @@
 import { MenuItem } from './MenuItem';
+import { usePathname } from 'next/navigation';
 import HomeIcon from '../../assets/icons/Home.svg';
 import GeneralIcon from '../../assets/icons/General.svg';
 import BusinessIcon from '../../assets/icons/Business.svg';
@@ -7,11 +8,16 @@ import ScienceIcon from '../../assets/icons/Science.svg';
 import SportsIcon from '../../assets/icons/Sport.svg';
 import TechnologyIcon from '../../assets/icons/Technology.svg';
 import FavouritesIcon from '../../assets/icons/Favourite.svg';
-import { usePathname } from 'next/navigation';
 
-export const MenuContent = ({ onClick }: { onClick?: () => void }) => {
+interface MenuContentProps {
+  onClick?: () => void;
+}
+
+export const MenuContent = ({ onClick }: MenuContentProps) => {
   const pathname = usePathname();
+
   const isActive = (href: string) => pathname === href;
+
   const items = [
     { icon: HomeIcon, title: 'Home', href: '/' },
     { icon: GeneralIcon, title: 'General', href: '/general' },
