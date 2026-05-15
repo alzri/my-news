@@ -7,11 +7,11 @@ export default function Business() {
   const filteredArticles = articleNews.filter((article) => article.category === 'business');
 
   return (
-    <div>
+    <>
       <Text className={styles.title} component="h2" size="h2" color="primary">
         Business news
       </Text>
       <ArticleList columnCount="three" articles={filteredArticles} />
-    </div>
+    </>
   );
 }

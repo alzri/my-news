@@ -7,11 +7,11 @@ export default function Science() {
   const filteredArticles = articleNews.filter((article) => article.category === 'science');
 
   return (
-    <div>
+    <>
       <Text className={styles.title} component="h2" size="h2" color="primary">
         Science news
       </Text>
       <ArticleList columnCount="three" articles={filteredArticles} />
-    </div>
+    </>
   );
 }

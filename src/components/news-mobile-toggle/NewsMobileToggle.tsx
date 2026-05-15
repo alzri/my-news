@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import { ArticleList } from '../article-list/ArticleList';
 import { LatesNews } from '../lates-news/LatesNews';

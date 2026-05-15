@@ -1,7 +1,7 @@
 import { IPromptCardProps } from './PromptCard.types';
-import styles from './PromptCard.module.scss';
 import { Text } from '../text/Text';
 import { Button } from '../button/Button';
+import styles from './PromptCard.module.scss';
 
 export const PromptCard = ({
   title,

@@ -3,6 +3,7 @@ import './globals.css';
 import { Menu } from '../components/menu/Menu';
 import { CTABanner } from '../components/CTABanner/CTABanner';
 import { FavoritesProvider } from '../context/FavoritesContext';
+import { Header } from '../components/header/Header';
 
 export const metadata: Metadata = {
   title: 'MyNews',
@@ -23,11 +24,12 @@ export default function RootLayout({
           acceptAction={{ label: 'Get' }}
           declineAction={{ label: 'No, thanks' }}
         />
+        <Header />
         <div className="layout">
           <Menu />
-          <main>
+          <div className="content">
             <FavoritesProvider>{children}</FavoritesProvider>
-          </main>
+          </div>
         </div>
       </body>
     </html>

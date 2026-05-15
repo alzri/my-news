@@ -7,11 +7,11 @@ export default function Sports() {
   const filteredArticles = articleNews.filter((article) => article.category === 'sports');
 
   return (
-    <div>
+    <>
       <Text className={styles.title} component="h2" size="h2" color="primary">
         Sports news
       </Text>
       <ArticleList columnCount="three" articles={filteredArticles} />
-    </div>
+    </>
   );
 }

@@ -1,10 +1,8 @@
 import { useMemo } from 'react';
-import clsx from 'clsx';
-
 import { IArticleListProps } from './ArticleList.types';
 import { ArticleCard } from '../article-card/ArticleCard';
 import { BreakingNews } from '../breaking-news/BreakingNews';
-
+import clsx from 'clsx';
 import styles from './ArticleList.module.scss';
 
 export const ArticleList = ({

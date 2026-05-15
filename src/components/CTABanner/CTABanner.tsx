@@ -1,9 +1,8 @@
 'use client';
-
 import { Text } from '../text/Text';
 import { Button } from '../button/Button';
-import styles from './CTABanner.module.scss';
 import { useState } from 'react';
+import styles from './CTABanner.module.scss';
 
 type Action = {
   label: string;

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Button.module.scss';
-import clsx from 'clsx';
 import Link from 'next/link';
+import clsx from 'clsx';
+import styles from './Button.module.scss';
 
 export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   component?: 'button' | 'a';

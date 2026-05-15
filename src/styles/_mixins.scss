@@ -41,22 +41,10 @@
 /* text component mixins */
 
 @mixin text-styles($type, $level) {
-  font-family: var(--typography-l-#{$type}-#{$level}-font-family);
-  font-size: var(--typography-l-#{$type}-#{$level}-font-size);
-  line-height: var(--typography-l-#{$type}-#{$level}-line-height);
-  letter-spacing: var(--typography-l-#{$type}-#{$level}-letter-spacing);
-
-  @media screen and (width < $breakpoint-m) {
-    font-size: var(--typography-m-#{$type}-#{$level}-font-size);
-    line-height: var(--typography-m-#{$type}-#{$level}-line-height);
-    letter-spacing: var(--typography-m-#{$type}-#{$level}-letter-spacing);
-  }
-
-  @media screen and (width < $breakpoint-s) {
-    font-size: var(--typography-s-#{$type}-#{$level}-font-size);
-    line-height: var(--typography-s-#{$type}-#{$level}-line-height);
-    letter-spacing: var(--typography-s-#{$type}-#{$level}-letter-spacing);
-  }
+  font-family: var(--typography-#{$type}-#{$level}-font-family);
+  font-size: var(--typography-#{$type}-#{$level}-font-size);
+  line-height: var(--typography-#{$type}-#{$level}-line-height);
+  letter-spacing: var(--typography-#{$type}-#{$level}-letter-spacing);
 }
 
 /* media queries */

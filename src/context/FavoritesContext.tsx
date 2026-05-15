@@ -1,8 +1,6 @@
 'use client';
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-
 import { getFavorites, toggleFavorite as toggleFavoriteStorage } from '../utils/favoritesDB';
-
 import { IArticleCardProps } from '../components/article-card/ArticleCard.types';
 
 interface FavoritesContextType {

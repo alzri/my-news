@@ -7,11 +7,11 @@ export default function Tehnology() {
   const filteredArticles = articleNews.filter((article) => article.category === 'tehnology');
 
   return (
-    <div>
+    <>
       <Text className={styles.title} component="h2" size="h2" color="primary">
         Tehnology news
       </Text>
       <ArticleList columnCount="three" articles={filteredArticles} />
-    </div>
+    </>
   );
 }

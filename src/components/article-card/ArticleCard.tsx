@@ -1,12 +1,12 @@
 'use client';
 import { IArticleCardProps } from './ArticleCard.types';
-import styles from './ArticleCard.module.scss';
 import { Text } from '../text/Text';
 import Link from 'next/link';
 import Image from 'next/image';
 import BannerImage from '../../assets/ArticleImage.png';
 import { useFavorites } from '../../context/FavoritesContext';
 import FavouritesIcon from '../../assets/icons/Favourite.svg';
+import styles from './ArticleCard.module.scss';
 
 export const ArticleCard = ({ url, category, title, author, isPaid }: IArticleCardProps) => {
   const { toggleFavorite, isFavorite } = useFavorites();

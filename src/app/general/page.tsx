@@ -7,11 +7,11 @@ export default function General() {
   const filteredArticles = articleNews.filter((article) => article.category === 'general');
 
   return (
-    <div>
+    <>
       <Text className={styles.title} component="h2" size="h2" color="primary">
         General news
       </Text>
       <ArticleList columnCount="three" articles={filteredArticles} />
-    </div>
+    </>
   );
 }

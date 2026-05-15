@@ -1,5 +1,4 @@
 'use client';
-
 import { IDBPDatabase, openDB } from 'idb';
 import { IArticleCardProps } from '../components/article-card/ArticleCard.types';
 
