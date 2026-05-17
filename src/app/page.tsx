@@ -1,11 +1,11 @@
 import { ArticleList } from '../components/article-list/ArticleList';
-import styles from './page.module.css';
 import { Text } from '../components/text/Text';
 import { LatesNews } from '../components/lates-news/LatesNews';
 import NewsMobileToggle from '../components/news-mobile-toggle/NewsMobileToggle';
 import { fetchAllNews } from '../lib/fetchAllNews';
 import { shuffle } from '../lib/utils/shuffle';
 import { breakingNews } from '../data/dummyNews';
+import './globals.css';
 
 export default async function Home() {
   const articles = shuffle(await fetchAllNews());
@@ -23,23 +23,23 @@ export default async function Home() {
   });
 
   return (
-    <main className={styles.main}>
-      <div className={styles.desktop}>
-        <Text className={styles.title} component="h2" size="h2" color="primary">
+    <main>
+      <div className="desktop">
+        <Text className="title" component="h2" size="h2" color="primary">
           News
         </Text>
 
-        <div className={styles['top-section']}>
+        <div className="top-section">
           <ArticleList columnCount="two" articles={articles} breakingNews={breakingNews} />
           <LatesNews articles={articles} />
         </div>
 
-        <div className={styles['bottom-section']}>
+        <div className="bottom-section">
           <ArticleList columnCount="three" articles={processedArticles} />
         </div>
       </div>
 
-      <div className={styles.mobile}>
+      <div className="mobile">
         <NewsMobileToggle />
       </div>
     </main>

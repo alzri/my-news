@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { ArticleList } from '../../components/article-list/ArticleList';
 import { Text } from '../../components/text/Text';
 import { fetchAllNews } from '../../lib/fetchAllNews';
-import styles from '../page.module.css';
+import '../globals.css';
 
 const validCategories = [
   'general',
@@ -34,7 +34,7 @@ export default async function NewsCategoryPage({ params }: Props) {
 
   return (
     <>
-      <Text className={styles.title} component="h2" size="h2" color="primary">
+      <Text className="title" component="h2" size="h2" color="primary">
         {category.charAt(0).toUpperCase() + category.slice(1)} news
       </Text>
 

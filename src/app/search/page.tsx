@@ -1,7 +1,7 @@
 import { ArticleList } from '../../components/article-list/ArticleList';
 import { Text } from '../../components/text/Text';
-import styles from '../page.module.css';
 import { fetchAllNews } from '@/src/lib/fetchAllNews';
+import '../globals.css';
 
 interface SearchPageProps {
   searchParams: Promise<{ query?: string }>;
@@ -17,7 +17,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
   return (
     <>
-      <Text className={styles.title} component="h2" size="h2" color="primary">
+      <Text className="title" component="h2" size="h2" color="primary">
         Search results for: {query || '...'}
       </Text>
 

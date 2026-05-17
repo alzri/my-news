@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import './globals.css';
 import { Menu } from '../components/menu/Menu';
-import { CTABanner } from '../components/CTABanner/CTABanner';
+import { CTABanner } from '../components/cta-banner/CTABanner';
 import { FavoritesProvider } from '../context/FavoritesContext';
 import { Header } from '../components/header/Header';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'MyNews',
-  description: 'MyNews je web aplikacija za brzo pregledavanje vijesti i članaka.',
+  description: 'MyNews is a web application for quickly browsing news and articles.',
 };
 
 export default function RootLayout({
