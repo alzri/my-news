@@ -5,9 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useFavorites } from '../../context/FavoritesContext';
 import FavouritesIcon from '../../assets/icons/Favourite.svg';
-import { useArticleImage } from '../../hooks/useArticleImage';
 import { useCategoryNavigation } from '../../hooks/useCategoryNavigation';
 import styles from './ArticleCard.module.scss';
+import { getArticleImage } from '@/src/utils/image.utils';
 
 export const ArticleCard = ({
   url,
@@ -17,7 +17,7 @@ export const ArticleCard = ({
   isPaid,
   urlToImage,
 }: IArticleCardProps) => {
-  const { imgSrc, handleError } = useArticleImage(urlToImage);
+  const { src, fallbackSrc } = getArticleImage(urlToImage);
   const { handleCategoryClick } = useCategoryNavigation(category);
 
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -57,7 +57,14 @@ export const ArticleCard = ({
           )}
 
           <div className={styles['image-wrapper']}>
-            <Image src={imgSrc} alt={title} fill onError={handleError} />
+            <Image
+              src={src}
+              alt={title}
+              fill
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = fallbackSrc;
+              }}
+            />
           </div>
         </div>
 
