@@ -3,12 +3,13 @@ import { Text } from '../components/text/Text';
 import { LatesNews } from '../components/lates-news/LatesNews';
 import NewsMobileToggle from '../components/news-mobile-toggle/NewsMobileToggle';
 import { fetchAllNews } from '../lib/fetchAllNews';
-import { shuffle } from '../lib/utils/shuffle';
 import { breakingNews } from '../data/dummyNews';
 import './globals.css';
 
 export default async function Home() {
-  const articles = shuffle(await fetchAllNews());
+  const articles = (await fetchAllNews()).sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 
   const processedArticles = articles.map((article, index) => {
     const rowSize = 3;
