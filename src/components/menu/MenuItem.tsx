@@ -1,10 +1,10 @@
-import { IMenuProps } from './Menu.types';
+import { IMenuItemProps } from './MenuItem.types';
 import { Text } from '../text/Text';
 import Link from 'next/link';
 import clsx from 'clsx';
 import styles from './Menu.module.scss';
 
-export const MenuItem = ({ icon, title, href, isActive = false, onClick }: IMenuProps) => {
+export const MenuItem = ({ icon, title, href, isActive = false, onClick }: IMenuItemProps) => {
   const classNames = clsx(styles['menu-item-container'], isActive && styles.active);
   const Icon = icon;
 

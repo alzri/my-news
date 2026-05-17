@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Menu } from '../components/menu/Menu';
+import { Sidebar } from '../components/sidebar/Sidebar';
 import { CTABanner } from '../components/cta-banner/CTABanner';
 import { FavoritesProvider } from '../context/FavoritesContext';
 import { Header } from '../components/header/Header';
@@ -26,7 +26,7 @@ export default function RootLayout({
         />
         <Header />
         <div className="layout">
-          <Menu />
+          <Sidebar />
           <div className="content">
             <FavoritesProvider>{children}</FavoritesProvider>
           </div>
