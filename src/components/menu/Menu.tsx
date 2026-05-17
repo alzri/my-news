@@ -18,7 +18,9 @@ export const Menu = () => {
     };
   }, [isOpen]);
 
-  const { search, handleSearch, submitSearch } = useSearch();
+  const { search, handleSearch, submitSearch } = useSearch(() => {
+    setIsOpen(false);
+  });
 
   return (
     <div className={styles['menu-wrapper']}>

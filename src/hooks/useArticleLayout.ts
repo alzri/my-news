@@ -13,7 +13,6 @@ export const useArticleLayout = ({ articles, isMobile, isTwoColumn }: Params) =>
 
     const twoColumn = articles.slice(0, 3);
     const reservedUrls = new Set(twoColumn.map((a) => a.url));
-
     const remaining = articles.filter((a) => !reservedUrls.has(a.url));
 
     if (isTwoColumn) return twoColumn;
@@ -35,7 +34,6 @@ export const useArticleLayout = ({ articles, isMobile, isTwoColumn }: Params) =>
 
       if (item) result.push(item);
     }
-
-    return result;
+    return result.length > 0 ? result : articles;
   }, [articles, isMobile, isTwoColumn]);
 };

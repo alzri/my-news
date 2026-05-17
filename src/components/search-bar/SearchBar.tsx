@@ -14,6 +14,7 @@ interface SearchBarProps {
 export const SearchBar = ({ value, onChange, onEnter, onSearchClick }: SearchBarProps) => {
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       onEnter();
     }
   };
