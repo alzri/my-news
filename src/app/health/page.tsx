@@ -1,10 +1,11 @@
+import { fetchAllNews } from '../../lib/fetchAllNews';
 import { ArticleList } from '../../components/article-list/ArticleList';
 import { Text } from '../../components/text/Text';
-import { articleNews } from '../../data/dummyNews';
 import styles from '../page.module.css';
 
-export default function Health() {
-  const filteredArticles = articleNews.filter((article) => article.category === 'health');
+export default async function Health() {
+  const articles = await fetchAllNews();
+  const filteredArticles = articles.filter((article) => article.category === 'health');
 
   return (
     <div>

@@ -1,10 +1,11 @@
 import { ArticleList } from '../../components/article-list/ArticleList';
 import { Text } from '../../components/text/Text';
-import { articleNews } from '../../data/dummyNews';
+import { fetchAllNews } from '../../lib/fetchAllNews';
 import styles from '../page.module.css';
 
-export default function Business() {
-  const filteredArticles = articleNews.filter((article) => article.category === 'business');
+export default async function Business() {
+  const articles = await fetchAllNews();
+  const filteredArticles = articles.filter((article) => article.category === 'business');
 
   return (
     <>

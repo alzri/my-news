@@ -14,7 +14,6 @@ export const ArticleList = ({
 }: IArticleListProps) => {
   const isMobile = useIsMobile();
   const isTwoColumn = columnCount === 'two';
-
   const orderedArticles = useArticleLayout({
     articles,
     isMobile,

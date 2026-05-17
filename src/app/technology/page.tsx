@@ -1,10 +1,11 @@
+import { fetchAllNews } from '@/src/lib/fetchAllNews';
 import { ArticleList } from '../../components/article-list/ArticleList';
 import { Text } from '../../components/text/Text';
-import { articleNews } from '../../data/dummyNews';
 import styles from '../page.module.css';
 
-export default function Tehnology() {
-  const filteredArticles = articleNews.filter((article) => article.category === 'tehnology');
+export default async function Tehnology() {
+  const articles = await fetchAllNews();
+  const filteredArticles = articles.filter((article) => article.category === 'technology');
 
   return (
     <>

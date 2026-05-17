@@ -1,6 +1,6 @@
 export interface IArticleCardProps {
   title: string;
-  /*   urlToImage: string; */
+  urlToImage: string;
   url: string;
   category: string;
   author: string;

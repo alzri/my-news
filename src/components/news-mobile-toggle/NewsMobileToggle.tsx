@@ -1,29 +1,9 @@
-'use client';
-import { useState } from 'react';
-import { ArticleList } from '../article-list/ArticleList';
-import { LatesNews } from '../lates-news/LatesNews';
-import { articleNews, latestNews } from '../../data/dummyNews';
-import { Button } from '../button/Button';
-import styles from './NewsMobileToggle.module.scss';
+import { NewsMobileToggleClient } from './NewsMobileToggleClient';
+import { fetchAllNews } from '../../lib/fetchAllNews';
+import { latestNews } from '../../data/dummyNews';
 
-export const NewsMobileToggle = () => {
-  const [view, setView] = useState<'articles' | 'latest'>('articles');
+export default async function NewsMobileToggle() {
+  const articles = await fetchAllNews();
 
-  return (
-    <div className={styles['news-mobile-toggle-wrapper']}>
-      <div>
-        <Button version="switch" isActive={view === 'articles'} onClick={() => setView('articles')}>
-          Featured
-        </Button>
-
-        <Button version="switch" isActive={view === 'latest'} onClick={() => setView('latest')}>
-          Latest
-        </Button>
-      </div>
-
-      {view === 'articles' && <ArticleList columnCount="three" articles={articleNews} />}
-
-      {view === 'latest' && <LatesNews articles={latestNews} />}
-    </div>
-  );
-};
+  return <NewsMobileToggleClient articles={articles} latestNews={latestNews} />;
+}
