@@ -19,7 +19,6 @@ export const ArticleCard = ({
 }: IArticleCardProps) => {
   const { toggleFavorite, isFavorite } = useFavorites();
   const favorite = isFavorite(url);
-
   const handleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
@@ -34,9 +33,7 @@ export const ArticleCard = ({
   };
 
   const fallbackSrc = typeof BannerImage === 'string' ? BannerImage : BannerImage.src;
-
   const isValidImage = (url?: string | null) => !!url && url.trim() !== '' && url !== 'null';
-
   const [imgSrc, setImgSrc] = useState(isValidImage(urlToImage) ? urlToImage! : fallbackSrc);
 
   return (

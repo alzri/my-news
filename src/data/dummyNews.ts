@@ -227,7 +227,7 @@ export const articleNews = [
 ];
 
 export const breakingNews = {
-  title: 'Ovo je jedan od naslova za breaking news',
-  author: 'Auto je netko',
+  title: 'Peace On Earth A Wonderful Wish But No Way',
+  author: 'Bertie Campbell',
   url: '#',
 };
