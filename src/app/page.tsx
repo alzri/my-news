@@ -14,7 +14,6 @@ export default async function Home() {
     const rowSize = 3;
     const row = Math.floor(index / rowSize);
     const positionInRow = index % rowSize;
-
     const isPaid = (row % 2 === 0 && positionInRow === 2) || (row === 3 && positionInRow === 2);
 
     return {
@@ -32,7 +31,7 @@ export default async function Home() {
 
         <div className={styles['top-section']}>
           <ArticleList columnCount="two" articles={articles} breakingNews={breakingNews} />
-          <LatesNews articles={articles.slice(0, 5)} />
+          <LatesNews articles={articles} />
         </div>
 
         <div className={styles['bottom-section']}>

@@ -28,16 +28,20 @@ export const LatesNews = ({ articles }: ILatesNewsProps) => {
         }
       },
       {
-        threshold: 1,
+        root: null,
+        threshold: 0,
+        rootMargin: '200px',
       }
     );
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
-    }
+    const el = loaderRef.current;
 
-    return () => observer.disconnect();
-  }, [visibleCount, articles.length]);
+    if (el) observer.observe(el);
+
+    return () => {
+      if (el) observer.unobserve(el);
+    };
+  }, [articles.length, visibleCount]);
 
   const visibleArticles = articles.slice(0, visibleCount);
 
