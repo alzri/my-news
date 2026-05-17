@@ -26,12 +26,12 @@ export const ArticleList = ({
   });
 
   return (
-    <div className={containerClassName}>
+    <section className={containerClassName}>
       {orderedArticles.map((article) => (
         <ArticleCard key={article.url} {...article} />
       ))}
 
       {isTwoColumn && breakingNews && <BreakingNews {...breakingNews} />}
-    </div>
+    </section>
   );
 };
