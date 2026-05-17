@@ -1,13 +1,13 @@
 'use client';
-
 import { IArticleCardProps } from './ArticleCard.types';
 import { Text } from '../text/Text';
 import Image from 'next/image';
-import BannerImage from '../../assets/ArticleImage.png';
+import Link from 'next/link';
 import { useFavorites } from '../../context/FavoritesContext';
 import FavouritesIcon from '../../assets/icons/Favourite.svg';
+import { useArticleImage } from '../../hooks/useArticleImage';
+import { useCategoryNavigation } from '../../hooks/useCategoryNavigation';
 import styles from './ArticleCard.module.scss';
-import { useState } from 'react';
 
 export const ArticleCard = ({
   url,
@@ -17,10 +17,14 @@ export const ArticleCard = ({
   isPaid,
   urlToImage,
 }: IArticleCardProps) => {
+  const { imgSrc, handleError } = useArticleImage(urlToImage);
+  const { handleCategoryClick } = useCategoryNavigation(category);
+
   const { toggleFavorite, isFavorite } = useFavorites();
   const favorite = isFavorite(url);
   const handleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    e.stopPropagation();
 
     toggleFavorite({
       url,
@@ -32,49 +36,51 @@ export const ArticleCard = ({
     });
   };
 
-  const fallbackSrc = typeof BannerImage === 'string' ? BannerImage : BannerImage.src;
-  const isValidImage = (url?: string | null) => !!url && url.trim() !== '' && url !== 'null';
-  const [imgSrc, setImgSrc] = useState(isValidImage(urlToImage) ? urlToImage! : fallbackSrc);
-
   return (
     <div className={styles['article-wrapper']}>
-      <a href={url} target="_blank" rel="noopener noreferrer" className={styles['article-wrapper']}>
+      <Link
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles['article-wrapper']}
+      >
         <div className={styles['article-banner']}>
           {isPaid && (
             <Text
               className={styles['article-paid-badge']}
-              component={'span'}
-              size={'paragraph-xs'}
-              color={'tertiary'}
+              component="span"
+              size="paragraph-xs"
+              color="tertiary"
             >
               AD
             </Text>
           )}
 
           <div className={styles['image-wrapper']}>
-            <Image src={imgSrc} alt={title} fill onError={() => setImgSrc(fallbackSrc)} />
+            <Image src={imgSrc} alt={title} fill onError={handleError} />
           </div>
         </div>
 
         <div className={styles['article-content']}>
           <Text
             className={styles.category}
-            component={'p'}
-            size={'paragraph-xs'}
-            color={'accent-primary'}
+            component="p"
+            size="paragraph-xs"
+            color="accent-primary"
+            onClick={handleCategoryClick}
           >
             {category}
           </Text>
 
-          <Text className={styles.title} component={'h3'} size={'h3'} color={'secondary'}>
+          <Text className={styles.title} component="h3" size="h3" color="secondary">
             {title}
           </Text>
 
-          <Text className={styles.author} component={'p'} size={'paragraph-s'} color={'primary'}>
+          <Text className={styles.author} component="p" size="paragraph-s" color="primary">
             {author}
           </Text>
         </div>
-      </a>
+      </Link>
 
       <div className={styles.overlay}>
         <button
