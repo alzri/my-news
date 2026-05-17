@@ -69,7 +69,7 @@ export const LatesNews = ({ articles }: ILatesNewsProps) => {
       {visibleCount < articles.length && <div ref={loaderRef} style={{ height: 40 }} />}
 
       <div className={styles['lates-news-more']}>
-        <Button href="/more" component="a" version="link">
+        <Button href="/latest" component="a" version="link">
           See all news
         </Button>
 
