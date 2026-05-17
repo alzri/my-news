@@ -3,25 +3,24 @@ import { Text } from '../components/text/Text';
 import { LatesNews } from '../components/lates-news/LatesNews';
 import NewsMobileToggle from '../components/news-mobile-toggle/NewsMobileToggle';
 import { fetchAllNews } from '../lib/fetchAllNews';
-import { breakingNews } from '../data/dummyNews';
+import { sortByNewestFirst, addPaidFlag } from '../lib/articlesLayout';
 import './globals.css';
 
 export default async function Home() {
-  const articles = (await fetchAllNews()).sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  const allArticles = await fetchAllNews();
+  const sortedArticles = sortByNewestFirst(allArticles);
+  const breakingArticle = sortedArticles[3];
 
-  const processedArticles = articles.map((article, index) => {
-    const rowSize = 3;
-    const row = Math.floor(index / rowSize);
-    const positionInRow = index % rowSize;
-    const isPaid = (row % 2 === 0 && positionInRow === 2) || (row === 3 && positionInRow === 2);
+  const breaking = {
+    title: breakingArticle.title,
+    author: breakingArticle.author,
+    url: breakingArticle.url,
+  };
 
-    return {
-      ...article,
-      isPaid,
-    };
-  });
+  const mainArticles = sortedArticles.slice(0, 3);
+  const restArticles = sortedArticles.slice(4);
+  const processedMain = addPaidFlag(mainArticles);
+  const processedRest = addPaidFlag(restArticles);
 
   return (
     <main>
@@ -31,12 +30,13 @@ export default async function Home() {
         </Text>
 
         <div className="top-section">
-          <ArticleList columnCount="two" articles={articles} breakingNews={breakingNews} />
-          <LatesNews articles={articles} />
+          <ArticleList columnCount="two" articles={processedMain} breakingNews={breaking} />
+
+          <LatesNews articles={sortedArticles} />
         </div>
 
         <div className="bottom-section">
-          <ArticleList columnCount="three" articles={processedArticles} />
+          <ArticleList columnCount="three" articles={processedRest} />
         </div>
       </div>
 

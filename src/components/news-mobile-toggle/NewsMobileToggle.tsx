@@ -1,9 +1,10 @@
 import { NewsMobileToggleClient } from './NewsMobileToggleClient';
 import { fetchAllNews } from '../../lib/fetchAllNews';
-import { latestNews } from '../../data/dummyNews';
+import { sortByNewestFirst } from '@/src/lib/articlesLayout';
 
 export default async function NewsMobileToggle() {
-  const articles = await fetchAllNews();
+  const allArticles = await fetchAllNews();
+  const sortedArticles = sortByNewestFirst(allArticles);
 
-  return <NewsMobileToggleClient articles={articles} latestNews={latestNews} />;
+  return <NewsMobileToggleClient articles={allArticles} latestNews={sortedArticles} />;
 }
