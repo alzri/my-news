@@ -200,3 +200,26 @@ main {
     display: grid;
   }
 }
+
+.not-found-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-self: center;
+  margin-top: 50px;
+}
+
+.back-home-button {
+  font-family: var(--font-family-primary);
+  font-size: 0.625rem;
+  line-height: 1rem;
+  letter-spacing: -0.001rem;
+  text-decoration: none;
+  color: var(--content-accent-tertiary);
+  background-color: var(--bg-secondary);
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  width: fit-content;
+}
