@@ -1,0 +1,28 @@
+.news-toggle-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.tab {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+
+  &.active {
+    font-weight: 700;
+    color: var(--active-state);
+    background-color: rgb(187 30 30 / 10%);
+  }
+}

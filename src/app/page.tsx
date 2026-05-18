@@ -1,7 +1,7 @@
 import { ArticleList } from '../components/article-list/ArticleList';
 import { Text } from '../components/text/Text';
 import { LatesNews } from '../components/lates-news/LatesNews';
-import NewsMobileToggle from '../components/news-mobile-toggle/NewsMobileToggle';
+import NewsToggle from '../components/news-toggle/NewsToggle';
 import { fetchAllNews } from '../lib/fetchAllNews';
 import { sortByNewestFirst, addPaidFlag } from '../lib/articlesLayout';
 import './globals.css';
@@ -41,7 +41,7 @@ export default async function Home() {
       </div>
 
       <div className="mobile">
-        <NewsMobileToggle />
+        <NewsToggle featuredArticles={allArticles} latestArticles={sortedArticles} />
       </div>
     </main>
   );
