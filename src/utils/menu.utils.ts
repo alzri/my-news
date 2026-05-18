@@ -1,4 +1,4 @@
-import HomeIcon from '../assets/icons/Home.svg';
+import HomeIcon from '../assets/icons/Homepage.svg';
 import GeneralIcon from '../assets/icons/General.svg';
 import BusinessIcon from '../assets/icons/Business.svg';
 import HealthIcon from '../assets/icons/Health.svg';
