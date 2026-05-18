@@ -4,7 +4,7 @@
   gap: 22px;
   align-items: stretch;
 
-  @media screen and (width <= 768px) {
+  @media screen and (width <= 1279px) {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -16,7 +16,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 
-  @media screen and (width <= 768px) {
+  @media screen and (width <= 1279px) {
     display: flex;
     flex-direction: column;
     gap: 16px;

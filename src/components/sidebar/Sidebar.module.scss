@@ -9,7 +9,7 @@
 .desktop {
   display: block;
 
-  @media screen and (width <= 768px) {
+  @media screen and (width <= 1279px) {
     display: none;
   }
 }
@@ -17,7 +17,7 @@
 .mobile {
   display: none;
 
-  @media screen and (width <= 768px) {
+  @media screen and (width <= 1279px) {
     display: block;
     position: absolute;
     top: 5%;
