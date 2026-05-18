@@ -21,7 +21,7 @@ export async function fetchNewsByCategory(category: NewsCategory) {
       'X-Api-Key': API_KEY!,
     },
     next: {
-      revalidate: 7200,
+      revalidate: 1800,
     },
   });
 
