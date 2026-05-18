@@ -61,6 +61,8 @@ export const ArticleCard = ({
               src={src}
               alt={title}
               fill
+              unoptimized
+              style={{ objectFit: 'cover' }}
               onError={(e) => {
                 (e.target as HTMLImageElement).src = fallbackSrc;
               }}
