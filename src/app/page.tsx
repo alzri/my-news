@@ -1,6 +1,6 @@
 import { ArticleList } from '../components/article-list/ArticleList';
 import { Text } from '../components/text/Text';
-import { LatesNews } from '../components/lates-news/LatesNews';
+import { LatesNews } from '../components/latest-news/LatestNews';
 import NewsToggle from '../components/news-toggle/NewsToggle';
 import { fetchAllNews } from '../lib/fetchAllNews';
 import { sortByNewestFirst, addPaidFlag } from '../lib/articlesLayout';

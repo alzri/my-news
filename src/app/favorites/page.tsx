@@ -4,13 +4,13 @@ import { Text } from '../../components/text/Text';
 import { useFavorites } from '../../context/FavoritesContext';
 import '../globals.css';
 
-export default function Favourites() {
+export default function Favorites() {
   const { favorites } = useFavorites();
 
   return (
     <>
       <Text className="title" component="h2" size="h2" color="primary">
-        Favourites news
+        Favorites news
       </Text>
       <ArticleList articles={favorites} />
     </>

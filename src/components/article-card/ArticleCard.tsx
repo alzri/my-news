@@ -4,7 +4,7 @@ import { Text } from '../text/Text';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useFavorites } from '../../context/FavoritesContext';
-import FavouritesIcon from '../../assets/icons/Favourite.svg';
+import FavoritesIcon from '../../assets/icons/Favourite.svg';
 import { useCategoryNavigation } from '../../hooks/useCategoryNavigation';
 import styles from './ArticleCard.module.scss';
 import { getArticleImage } from '@/src/utils/image.utils';
@@ -96,7 +96,7 @@ export const ArticleCard = ({
           className={`${styles.favorite} ${favorite ? styles.active : ''}`}
           onClick={handleFavorite}
         >
-          <FavouritesIcon className={`${styles.icon} ${favorite ? styles.active : ''}`} />
+          <FavoritesIcon className={`${styles.icon} ${favorite ? styles.active : ''}`} />
         </button>
       </div>
     </div>

@@ -4,15 +4,15 @@ import { ILatestNewsItemProps, LatestNewsItem } from './LatestNewsItem';
 import { Text } from '../text/Text';
 import ArrowRight from '../../assets/icons/ArrowRight.svg';
 import { Button } from '../button/Button';
-import styles from './LatesNews.module.scss';
+import styles from './LatestNews.module.scss';
 
-export interface ILatesNewsProps {
+export interface ILatestNewsProps {
   articles: ILatestNewsItemProps[];
 }
 
 const ITEMS_PER_LOAD = 10;
 
-export const LatesNews = ({ articles }: ILatesNewsProps) => {
+export const LatesNews = ({ articles }: ILatestNewsProps) => {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
 
   const loaderRef = useRef<HTMLDivElement | null>(null);

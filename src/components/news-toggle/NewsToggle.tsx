@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { ArticleList } from '../article-list/ArticleList';
-import { LatesNews } from '../lates-news/LatesNews';
+import { LatesNews } from '../latest-news/LatestNews';
 import { IArticleCardProps } from '../article-card/ArticleCard.types';
-import { ILatestNewsItemProps } from '../lates-news/LatestNewsItem';
+import { ILatestNewsItemProps } from '../latest-news/LatestNewsItem';
 import { Button } from '../button/Button';
 import clsx from 'clsx';
 import styles from './NewsToggle.module.scss';
