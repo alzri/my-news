@@ -2,6 +2,7 @@
 
 A responsive news application built with **Next.js (App Router)**, **React**, and **TypeScript**. The app aggregates news from multiple categories and organizes them into three feeds: featured stories, latest news with infinite scroll, and a breaking news highlight. Users can also save articles to a favorites page with a hover-to-save interaction.
 
+
 ## Features
 
 - Fetches news from multiple categories (General, Technology, Sports, Health, Science, Business)
@@ -15,6 +16,7 @@ A responsive news application built with **Next.js (App Router)**, **React**, an
 - Responsive layout (desktop + mobile, tablet uses mobile layout)
 - Favorites system with hover-to-save interaction
 
+
 ## Data Flow
 
 1. Fetch articles from multiple categories in parallel
@@ -25,6 +27,7 @@ A responsive news application built with **Next.js (App Router)**, **React**, an
    - Featured feed
    - Latest feed
 6. Render based on device and layout
+
 
 ## Design Decisions
 
@@ -50,6 +53,7 @@ Tablet layout reuses the mobile design. No separate tablet design was provided, 
 
 Uses **newsapi.org** for multi-category news aggregation due to its simple integration and broad category support.
 
+
 ## Trade-offs & Limitations
 
 - Infinite scroll is client-side due to API limitations (no native pagination support)
@@ -58,11 +62,13 @@ Uses **newsapi.org** for multi-category news aggregation due to its simple integ
 
 These decisions were made to prioritize frontend architecture and user experience over backend complexity.
 
+
 ## Environment Variables
 
 Create a `.env.local` file in the root directory:
 
 NEWS_API_KEY=your_api_key_here
+
 
 ## Tech Stack
 
@@ -89,6 +95,14 @@ NEWS_API_KEY=your_api_key_here
 - `idb` – local storage (favorites)
 - `@svgr/webpack` – SVG components
 
+
+## Setup and Installation
+
+1. Clone the repository.
+2. Install the dependencies with `npm install`.
+3. Start the development server with `npm run dev`.
+
+
 ## Scripts
 
 ```bash
@@ -99,10 +113,4 @@ npm run lint       # Run lint checks
 npm run lint -- --fix   # Auto-fix lint issues
 npm run typecheck  # TypeScript validation
 npm run test       # Full project checks
-
-## Setup and Installation
-
-1. Clone the repository.
-2. Install the dependencies with `npm install`.
-3. Start the development server with `npm run dev`.
 ```
