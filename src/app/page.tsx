@@ -10,17 +10,16 @@ export default async function Home() {
   const allArticles = await fetchAllNews();
   const sortedArticles = sortByNewestFirst(allArticles);
   const breakingArticle = sortedArticles[3];
-
   const breaking = {
     title: breakingArticle.title,
     author: breakingArticle.author,
     url: breakingArticle.url,
   };
 
-  const mainArticles = sortedArticles.slice(0, 3);
-  const restArticles = sortedArticles.slice(4);
-  const processedMain = addPaidFlag(mainArticles);
-  const processedRest = addPaidFlag(restArticles);
+  const mainFeedSource = sortedArticles.slice(10);
+  const mainArticles = addPaidFlag(mainFeedSource.slice(0, 3));
+  const restArticles = addPaidFlag(mainFeedSource.slice(3));
+  const latestFeed = sortedArticles.slice(0, 50);
 
   return (
     <main>
@@ -30,18 +29,17 @@ export default async function Home() {
         </Text>
 
         <div className="top-section">
-          <ArticleList columnCount="two" articles={processedMain} breakingNews={breaking} />
+          <ArticleList columnCount="two" articles={mainArticles} breakingNews={breaking} />
 
-          <LatesNews articles={sortedArticles} />
+          <LatesNews articles={latestFeed} />
         </div>
 
         <div className="bottom-section">
-          <ArticleList columnCount="three" articles={processedRest} />
+          <ArticleList columnCount="three" articles={restArticles} />
         </div>
       </div>
-
       <div className="mobile">
-        <NewsToggle featuredArticles={allArticles} latestArticles={sortedArticles} />
+        <NewsToggle featuredArticles={mainArticles} latestArticles={latestFeed} />
       </div>
     </main>
   );

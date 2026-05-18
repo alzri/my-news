@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useRef, useState } from 'react';
 import { ILatestNewsItemProps, LatestNewsItem } from './LatestNewsItem';
 import { Text } from '../text/Text';
