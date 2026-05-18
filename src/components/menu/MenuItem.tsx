@@ -16,7 +16,7 @@ export const MenuItem = ({ icon, title, href, isActive = false, onClick }: IMenu
         onClick?.();
       }}
     >
-      <Icon className={styles.icon} />
+      <Icon />
       <Text className={styles['item-name']} component="p" size="paragraph-xs" color="primary">
         {title}
       </Text>
