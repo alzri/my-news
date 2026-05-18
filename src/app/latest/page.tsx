@@ -3,6 +3,8 @@ import { Text } from '../../components/text/Text';
 import { fetchAllNews } from '../../lib/fetchAllNews';
 import '../globals.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function LatestPage() {
   const articles = (await fetchAllNews()).sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
