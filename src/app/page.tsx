@@ -20,6 +20,7 @@ export default async function Home() {
   const mainArticles = addPaidFlag(mainFeedSource.slice(0, 3));
   const restArticles = addPaidFlag(mainFeedSource.slice(3));
   const latestFeed = sortedArticles.slice(0, 50);
+  const mobileArticles = addPaidFlag(mainFeedSource);
 
   return (
     <main>
@@ -39,7 +40,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="mobile">
-        <NewsToggle featuredArticles={mainArticles} latestArticles={latestFeed} />
+        <NewsToggle featuredArticles={mobileArticles} latestArticles={latestFeed} />
       </div>
     </main>
   );
