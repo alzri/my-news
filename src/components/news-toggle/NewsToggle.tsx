@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ArticleList } from '../article-list/ArticleList';
-import { LatesNews } from '../latest-news/LatestNews';
+import { LatestNews } from '../latest-news/LatestNews';
 import { IArticleCardProps } from '../article-card/ArticleCard.types';
 import { ILatestNewsItemProps } from '../latest-news/LatestNewsItem';
 import { Button } from '../button/Button';
@@ -53,7 +53,7 @@ export default function NewsToggle({ featuredArticles, latestArticles }: Props) 
           [styles.hidden]: activeTab !== 'latest',
         })}
       >
-        <LatesNews articles={latestArticles} />
+        <LatestNews articles={latestArticles} />
       </div>
     </>
   );
