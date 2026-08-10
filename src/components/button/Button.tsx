@@ -7,9 +7,7 @@ export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
   component?: 'button' | 'a';
   href?: string;
   version?: 'red' | 'white' | 'transparent' | 'link' | 'switch';
-  children?: React.ReactNode;
   isActive?: boolean;
-  onClick?: () => void;
 }
 
 export const Button = ({
