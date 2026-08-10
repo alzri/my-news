@@ -20,12 +20,12 @@ export const CTABanner = ({ title, desc, acceptAction, declineAction }: ICTABann
   const [isVisible, setIsVisible] = useState(true);
   if (!isVisible) return null;
   const handleAccept = () => {
-    (acceptAction.onClick ?? (() => console.log('accepted')))();
+    (acceptAction.onClick ?? (() => {}))();
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    (declineAction.onClick ?? (() => console.log('declined')))();
+    (declineAction.onClick ?? (() => {}))();
     setIsVisible(false);
   };
 

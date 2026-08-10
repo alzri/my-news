@@ -1,6 +1,6 @@
 import { ArticleList } from '../components/article-list/ArticleList';
 import { Text } from '../components/text/Text';
-import { LatesNews } from '../components/latest-news/LatestNews';
+import { LatestNews } from '../components/latest-news/LatestNews';
 import NewsToggle from '../components/news-toggle/NewsToggle';
 import { fetchAllNews } from '../lib/fetchAllNews';
 import { sortByNewestFirst, addPaidFlag } from '../lib/articlesLayout';
@@ -32,7 +32,7 @@ export default async function Home() {
         <div className="top-section">
           <ArticleList columnCount="two" articles={mainArticles} breakingNews={breaking} />
 
-          <LatesNews articles={latestFeed} />
+          <LatestNews articles={latestFeed} />
         </div>
 
         <div className="bottom-section">

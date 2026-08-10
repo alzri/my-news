@@ -12,7 +12,7 @@ export interface ILatestNewsProps {
 
 const ITEMS_PER_LOAD = 10;
 
-export const LatesNews = ({ articles }: ILatestNewsProps) => {
+export const LatestNews = ({ articles }: ILatestNewsProps) => {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD);
 
   const loaderRef = useRef<HTMLDivElement | null>(null);

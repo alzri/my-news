@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { IArticleCardProps } from './ArticleCard.types';
 import { Text } from '../text/Text';
 import Image from 'next/image';
@@ -18,10 +19,17 @@ export const ArticleCard = ({
   urlToImage,
 }: IArticleCardProps) => {
   const { src, fallbackSrc } = getArticleImage(urlToImage);
+  const initialImageSrc =
+    src !== fallbackSrc ? `/api/image?url=${encodeURIComponent(src)}` : fallbackSrc;
+  const [imageSrc, setImageSrc] = useState(initialImageSrc);
   const { handleCategoryClick } = useCategoryNavigation(category);
 
   const { toggleFavorite, isFavorite } = useFavorites();
   const favorite = isFavorite(url);
+
+  const handleImageError = () => {
+    setImageSrc(fallbackSrc);
+  };
   const handleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -58,14 +66,12 @@ export const ArticleCard = ({
 
           <div className={styles['image-wrapper']}>
             <Image
-              src={src}
+              src={imageSrc}
               alt={title}
               fill
               unoptimized
               style={{ objectFit: 'cover' }}
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = fallbackSrc;
-              }}
+              onError={handleImageError}
             />
           </div>
         </div>

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Text } from '../components/text/Text';
-import './globals.css';
 
 export default function NotFound() {
   return (

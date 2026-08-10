@@ -19,10 +19,9 @@ export type TextColor =
   | 'active-state'
   | 'inactive-state';
 
-export interface ITextProps extends React.HTMLAttributes<HTMLParagraphElement> {
-  ref?: React.Ref<HTMLParagraphElement> | null;
-  component: TextComponent;
+export interface ITextProps extends React.HTMLAttributes<HTMLElement> {
+  component?: TextComponent;
   size: TextSize;
-  color: TextColor;
-  children: React.ReactNode;
+  color?: TextColor;
+  children?: React.ReactNode;
 }

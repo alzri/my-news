@@ -1,3 +1,4 @@
+'use client';
 import { MenuItem } from './MenuItem';
 import { usePathname } from 'next/navigation';
 import { menuItems } from '../../utils/menu.utils';
